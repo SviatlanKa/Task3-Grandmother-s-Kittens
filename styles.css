@@ -1,3 +1,121 @@
-*[title] {
-  font-size: 2em;
+@import url('https://fonts.googleapis.com/css?family=Raleway|Merriweather+Sans');
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  background-color: #FEE79D;
+}
+header {
+  font-family: 'Raleway', sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 1vh 2vw;
+}
+footer {
+  padding: 1vh 0;
+  border-top: 1px solid #FFC300;
+}
+.first-column, .third-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #FED13F;
+}
+.first-column {
+  width: 12vw;
+}
+.second-column {
+  display: flex;
+  flex-basis: 960px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.third-column {
+  padding: 1vh 0 0 1vw;
+  align-self: flex-start;
+  width: 15vw;
+}
+.cat-breed {
+  height: 3vh;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #FF8F02;
+}
+input.breed {
+  display: none;
+}
+label.breed > span {
+  cursor: pointer;
+}
+.cat-breed {
+  padding: 1vw;
+}
+input[id="abyssinian"]:checked ~ .second-column > img:not(.abyssinian), input[id="british"]:checked ~ .second-column > img:not(.british), input[id="russian-blue"]:checked ~ .second-column > img:not(.russian-blue), input[id="siamese"]:checked ~ .second-column > img:not(.siamese) {
+  opacity: 0.5;
+}
+.one-column-image {
+  width: 320px;
+}
+.two-columns-image {
+  width: 640px;
+}
+.three-columns-image {
+  width: 960px;
+}
+.third-column > span:first-child {
+  font-size: 1.3em;
+  text-align: left;
+}
+input.sort-values {
+  align-self: flex-end;
+  margin-right: 1vw;
+}
+input.sort-values::before {
+  text-align: right;
+  margin-left: -10ch;
+  font-size: 1.2em;
+  content: 'Descending';
+}
+.rating {
+  display: flex;
+  flex-direction: column;
+}
+.rating-item {
+  margin: 5px 0;
+}
+.rating-item > span:last-child {
+  font-size: 1.5em;
+}
+.rating-abyssinian, .rating-british, .rating-russian-blue, .rating-siamese {
+  display: inline-block;
+  height: 1.5vw;
+  min-height: 20px;
+}
+.rating-abyssinian {
+  width: calc((15vw - 10px - 3ch) / 10 * 9);
+  background: linear-gradient(90deg, #02A81A, #FFFFFF);
+}
+.rating-british {
+  width: calc((15vw - 10px - 3ch) / 10 * 8);
+  background: linear-gradient(90deg, #F4FF00, #FFFFFF);
+}
+.rating-russian-blue {
+  width: calc(15vw - 10px - 3ch);
+  background: linear-gradient(90deg, #02A81A, #FFFFFF);
+}
+.rating-siamese {
+  width: calc((15vw - 10px - 3ch) / 10 * 4);
+  background: linear-gradient(90deg, #FF0000, #FFFFFF);
+}
+input.sort-values:checked + .rating > .rating-item:nth-child(3){
+  order: -1;
 }
